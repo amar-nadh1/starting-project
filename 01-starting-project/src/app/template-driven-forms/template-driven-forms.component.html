@@ -1,0 +1,30 @@
+<form class="form-group" [ngFormOptions]="{updateOn: 'change'}"  (ngSubmit)="onSubmit()" >
+    <p>form dara</p>
+    <pre> {{user| json}}</pre>
+    <div >
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)] ="user.name" id="name" name="name" class="form-control" required>
+    </div>
+    
+    <div >
+        <label for="email">Email</label>
+        <input type="email" id="email"  [(ngModel)] ="user.email" name="email" class="form-control" required>
+    </div>
+    <div >
+        <label for="password">Password</label>
+        <input type="password" id="password"  [(ngModel)] ="user.password" name="password" class="form-control" required>
+    </div>
+    <div>
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword"  [(ngModel)] ="user.confirmPassword" class="form-control" required>
+    </div>
+    <div style="margin-bottom: 1rem;">
+      <label>Status: {{ filledPercentage }}% filled</label>
+      <div style="background: #eee; height: 10px; border-radius: 5px; overflow: hidden;">
+        <div [style.width.%]="filledPercentage" style="background: #007bff; height: 100%;"></div>
+      </div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </div>
+</form>
